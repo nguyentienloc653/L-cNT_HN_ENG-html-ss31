@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #window {
+        display: none;
+        border: 1px solid black;
+        border-radius: 5px;
+        gap: 20px;
+        width: fit-content;
+        align-self: center;
+        padding: 30px;
+        position: relative;
+      }
+      #main {
+        display: flex;
+        justify-content: center;
+      }
+      #btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Modal Example</h2>
+    <br />
+    <button id="btn2">Open modal</button>
+    <div id="main">
+      <div id="window">
+        <div style="text-align: start">Some text in the Modal</div>
+        <div id="btn">
+          <button style="border: 1px none white; background-color: white">
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let btn = document.querySelector("#btn");
+      let btn2 = document.querySelector("#btn2");
+      let window2 = document.querySelector("#window");
+      btn2.addEventListener("click", function () {
+        window2.style.display = "block";
+        document.body.style.background = "rgba(0,0,0,0.5)";
+        window2.style.background = "white";
+        btn2.style.background = "rgba(0,0,0,0.5)";
+      });
+      btn.addEventListener("click", function () {
+        window2.style.display = "none";
+        document.body.style.background = "white";
+        btn2.style.background = "white";
+      });
+    </script>
+  </body>
+</html>
